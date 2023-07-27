@@ -23,7 +23,7 @@ public class MedicosRestAPIs {
     public void cadastrarMedico(@RequestBody @Valid MedicoDTO medico){
 
         medicoRepository.save(new Medico(medico));
-        
+
     }
 
 }
