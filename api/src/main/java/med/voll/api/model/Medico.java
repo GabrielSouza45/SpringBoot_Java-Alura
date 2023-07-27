@@ -2,6 +2,7 @@ package med.voll.api.model;
 
 import jakarta.persistence.*;
 import lombok.*;
+import med.voll.api.Record.AtualizacaoMedicoDTO;
 import med.voll.api.Record.MedicoDTO;
 import med.voll.api.Tipo.Especialidade;
 
@@ -35,5 +36,17 @@ public class Medico {
         this.crm = medico.crm();
         this.especialidade = medico.especialidade();
         this.endereco = new Endereco(medico.endereco());
+    }
+
+    public void atualizaInformacoes(AtualizacaoMedicoDTO medico) {
+        if (medico.nome() != null) {
+            this.nome = medico.nome();
+        }
+        if (medico.telefone() != null) {
+            this.telefone = medico.telefone();
+        }
+        if (medico.endereco() != null) {
+            this.endereco.atualizarInformacoes(medico.endereco());
+        }
     }
 }
