@@ -64,6 +64,7 @@ public class MedicosRestAPIs {
     @GetMapping("/{id}") // -> Pega o parâmetro que vem pela url em forma de variavel
     @Transactional
     public ResponseEntity detalhar(@PathVariable Long id){ // -> @PathVariable informa para o /spring que o parâmetro da função vem pela url
-        return ResponseEntity.ok( medicoRepository.findById(id));
+        var medico = medicoRepository.getReferenceById(id);
+        return ResponseEntity.ok( new DadosDetalhamentoMedico(medico) );
     }
 }
