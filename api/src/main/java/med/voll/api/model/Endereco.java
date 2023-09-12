@@ -2,7 +2,7 @@ package med.voll.api.model;
 
 import jakarta.persistence.Embeddable;
 import lombok.*;
-import med.voll.api.Record.EnderecoDTO;
+import med.voll.api.Record.Endereco.EnderecoDTO;
 
 @Embeddable
 @Getter

@@ -1,10 +1,11 @@
-package med.voll.api.Record;
+package med.voll.api.Record.Medico;
 
 import jakarta.validation.Valid;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Pattern;
+import med.voll.api.Record.Endereco.EnderecoDTO;
 import med.voll.api.Tipo.Especialidade;
 
 public record MedicoDTO(

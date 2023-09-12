@@ -2,8 +2,8 @@ package med.voll.api.model;
 
 import jakarta.persistence.*;
 import lombok.*;
-import med.voll.api.Record.AtualizacaoMedicoDTO;
-import med.voll.api.Record.MedicoDTO;
+import med.voll.api.Record.Medico.AtualizacaoMedicoDTO;
+import med.voll.api.Record.Medico.MedicoDTO;
 import med.voll.api.Tipo.Especialidade;
 
 @Table(name = "medicos")
