@@ -2,6 +2,7 @@ package med.voll.api.Controller;
 
 import jakarta.transaction.Transactional;
 import jakarta.validation.Valid;
+import med.voll.api.Record.Paciente.AtualizacaoPacienteDTO;
 import med.voll.api.Record.Paciente.ListagemPacienteDTO;
 import med.voll.api.Record.Paciente.PacienteDTO;
 import med.voll.api.Record.Paciente.DadosDetalhamentoPaciente;
@@ -44,5 +45,28 @@ public class PacienteRestAPIs {
         var page = pacienteRepository.findAll(paginacao).map(ListagemPacienteDTO::new);
         return ResponseEntity.ok(page);
 
+    }
+
+    @PutMapping
+    @Transactional
+    public ResponseEntity<?> edtiarPaciente(@RequestBody AtualizacaoPacienteDTO dados){
+        Paciente paciente = pacienteRepository.getReferenceById(dados.id());
+        paciente.atualizaInformacoes(dados);
+
+        return ResponseEntity.ok(new DadosDetalhamentoPaciente(paciente));
+    }
+
+    @DeleteMapping(value = "/{id}")
+    @Transactional
+    public ResponseEntity<?> deletarPaciente(@PathVariable long id){
+        pacienteRepository.deleteById(id);
+        return ResponseEntity.noContent().build();
+    }
+
+    @GetMapping(value = "/{id}")
+    @Transactional
+    public ResponseEntity<?> detalhar(@PathVariable long id){
+        Paciente paciente = pacienteRepository.getReferenceById(id);
+        return ResponseEntity.ok(new DadosDetalhamentoPaciente(paciente));
     }
 }
