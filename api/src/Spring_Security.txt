@@ -1,0 +1,34 @@
+Segurança:
+
+* Spring Security *
+
+-> Autentificação
+-> Autorização (controle de acesso)
+-> Proteção contra ataques (CDRF, Clickjacking, etc.)
+
+Aplicações em web   -> Stateful
+Aplicações API Rest -> Stateless
+
+-> Stateful
+- Toda vez que o usuario faz ‘login’, o servidor guarda o estado das seções, as informações
+
+-> Stateless
+- Não guarda estado
+- Cada requisição necessita de um novo reconhecimento de usuário ( ‘login’ )
+
+
++ Tokens +
+
+--> JWT - JSON Web Tokens
+
+* Processo:
+- Front manda login e senha para o back
+- Back confere se usuario e senha estão correto no DB
+- Back gera um token e manda de volta para o front
+- Front salva esse token
+= Na proxima requisição:
+- Front manda os dados da requisição no body e o Token gerado no back pelo 'Header'
+- Authorization : Bearer TOKEN_JWT
+- Back valida o token recebido
+- Bloqueia a requisição caso o token não seja válido
+- Libera requisição caso o token seja valido
