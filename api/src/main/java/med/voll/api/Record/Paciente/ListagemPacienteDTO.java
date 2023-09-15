@@ -1,6 +1,6 @@
 package med.voll.api.Record.Paciente;
 
-import med.voll.api.model.Paciente;
+import med.voll.api.Model.Paciente;
 
 public record ListagemPacienteDTO(
         String nome,

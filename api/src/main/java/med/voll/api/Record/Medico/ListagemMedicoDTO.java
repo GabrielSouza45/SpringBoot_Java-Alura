@@ -1,7 +1,7 @@
 package med.voll.api.Record.Medico;
 
 import med.voll.api.Tipo.Especialidade;
-import med.voll.api.model.Medico;
+import med.voll.api.Model.Medico;
 
 public record ListagemMedicoDTO(
         String nome,

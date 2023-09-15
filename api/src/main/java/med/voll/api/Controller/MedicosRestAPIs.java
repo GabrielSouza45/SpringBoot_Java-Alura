@@ -7,7 +7,7 @@ import med.voll.api.Record.Medico.DadosDetalhamentoMedico;
 import med.voll.api.Record.Medico.ListagemMedicoDTO;
 import med.voll.api.Record.Medico.MedicoDTO;
 import med.voll.api.Repository.MedicoRepository;
-import med.voll.api.model.Medico;
+import med.voll.api.Model.Medico;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
